@@ -12,9 +12,9 @@ module.exports = {
         autoIncrement: true,
       },
       category_name: {
-        type: Sequelize.afterUpdate,
+        type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: Sequelize.fn('NOW'),
+        defaultValue: '',
       },
       updated_at: {
         type: Sequelize.DATE,

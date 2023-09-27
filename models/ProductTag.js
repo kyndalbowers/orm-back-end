@@ -2,6 +2,11 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
 
+// model imports
+const Category = require('./Category');
+const Product = require('./Product');
+const Tag = require('./Tag');
+
 ProductTag.belongsTo(models.Product, {
   foreignKey: 'product_id',
 });
