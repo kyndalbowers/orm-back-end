@@ -4,7 +4,9 @@
     "password": "Chickenfingers",
     "database": "ecommerce_db",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "logging":true,
+    "seeders-path": "./seeders"
   },
   "test": {
     "username": "root",

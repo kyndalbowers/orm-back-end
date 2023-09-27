@@ -1,19 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-
 const sequelize = require('../config/connection');
-
-// model imports
-const Category = require('./Category');
-const Product = require('./Product');
-const Tag = require('./Tag');
-
-ProductTag.belongsTo(models.Product, {
-  foreignKey: 'product_id',
-});
-
-ProductTag.belongsTo(models.Tag, {
-  foreignKey: 'tag_id',
-});
 
 class ProductTag extends Model {}
 
@@ -25,7 +11,6 @@ ProductTag.init(
       autoIncrement: true,
       allowNull: false,
     },
-
     product_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -33,7 +18,6 @@ ProductTag.init(
         key: 'id',
       },
     },
-
     tag_id: {
       type: DataTypes.INTEGER,
       references: {

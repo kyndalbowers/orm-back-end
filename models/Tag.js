@@ -1,15 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-
 const sequelize = require('../config/connection.js');
-
-// model imports
-const Category = require('./Category');
-const Product = require('./Product');
-
-Tag.belongsToMany(models.Product, {
-  through: 'ProductTag',
-  foreignKey: 'tag_id',
-});
 
 class Tag extends Model {}
 
@@ -21,7 +11,6 @@ Tag.init(
       autoIncrement: true,
       allowNull: false,
     },
-
     tag_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -36,11 +25,4 @@ Tag.init(
   }
 );
 
-// model association
-Tag.belongsToMany(Product, {
-  through: ProductTag,
-  foreignKey: 'tag_id',
-});
-
-// export
 module.exports = Tag;
