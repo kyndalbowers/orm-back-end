@@ -2,6 +2,14 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
 
+ProductTag.belongsTo(models.Product, {
+  foreignKey: 'product_id',
+});
+
+ProductTag.belongsTo(models.Tag, {
+  foreignKey: 'tag_id',
+});
+
 class ProductTag extends Model {}
 
 ProductTag.init(

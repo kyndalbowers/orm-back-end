@@ -2,6 +2,10 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
+Category.hasMany(models.Product, {
+  foreignKey: 'category.id',
+});
+
 class Category extends Model {}
 
 Category.init(
